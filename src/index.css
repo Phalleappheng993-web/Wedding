@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+/* Dark mode follows the .dark class toggled by the app (not the OS). */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --paper: #f6f1e7;
+  --paper-2: #ece4d3;
+  --ink: #241f1a;
+  --muted: rgb(36 31 26 / 0.66);
+  --gold: #7a5a12;
+  --wine: #4a1722;
+  --line: rgb(36 31 26 / 0.16);
+  color-scheme: light;
+}
+
+.dark {
+  --paper: #17120f;
+  --paper-2: #221a15;
+  --ink: #f2eadb;
+  --muted: rgb(242 234 219 / 0.68);
+  --gold: #d3b062;
+  --wine: #2b0f16;
+  --line: rgb(242 234 219 / 0.18);
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper2: var(--paper-2);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-gold: var(--gold);
+  --color-wine: var(--wine);
+  --color-line: var(--line);
+  --font-display: "Playfair Display", "Moul", serif;
+  --font-sans: "Kantumruy Pro", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  font-synthesis: none;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  line-height: 1.8; /* Khmer needs generous leading */
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3 { font-family: var(--font-display); font-weight: 500; line-height: 1.45; margin: 0; }
+p { margin: 0; }
+
+::selection { background: var(--wine); color: #f6f1e7; }
+
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+/* Leaflet needs a stacking context so the map never covers the controls */
+.leaflet-container { z-index: 0; font-family: var(--font-sans); }

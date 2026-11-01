@@ -1,0 +1,6 @@
+[
+  { "id": "G001", "name": "Dara", "group": "friends", "table": "3" },
+  { "id": "G002", "name": "Sreyneang", "group": "colleagues", "table": "7" },
+  { "id": "G003", "name": "លោកតា លោកយាយ", "group": "elders", "table": "1" },
+  { "id": "G004", "name": "Mr. & Mrs. Kim", "group": "family", "table": "2", "message": { "km": "អរគុណដែលតែងតែនៅក្បែរគ្រួសារយើងខ្ញុំ។", "en": "Thank you for always being by our family's side." } }
+]
